@@ -72,7 +72,7 @@ public class 配置文件_输出到控制台 {
          * 关于log4j.properties layout属性的配置
          * 这个配置的是日志输出的格式
          * 这个输出格式 也是在Log4j的配置文件中修改。
-         *  最长使用的是自定义的输出格式  即 PatternLayout
+         *  最常使用的是自定义的输出格式  即 PatternLayout
          *
          * 这个时候需要修改log4j.properties文件中的日志信息输出格式。
          * 需要在默认输出的配置文件下加入一行自定义格式的输出日志格式信息。

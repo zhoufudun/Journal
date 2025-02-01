@@ -18,7 +18,7 @@ public class 入门案例 {
         *      如果没有任何第三方日志框架的时候，我们使用的就是这个JUL
         * */
         // 注意：这里需要导入的是apache下的这个Log
-        Log log = LogFactory.getLog(入门案例.class);
+        Log log = LogFactory.getLog(入门案例.class); //log=org.apache.commons.logging.impl.SLF4JLocationAwareLog
         log.info("info信息");
     }
 
