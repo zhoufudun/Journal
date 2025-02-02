@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 public class SLF4J集成log4j的方法 {
 
     @Test
-    public void test01(){
+    public void test01() {
         /*
         * 绑定log4j
         * 由于log4j是在slf4j之前出品的日志框架实现
@@ -29,6 +29,27 @@ public class SLF4J集成log4j的方法 {
         * 我们虽然顶层使用的是log4j做的打印，但是从当前代码使用来看
         * 我们其实使用的仍然是slf4j日志门面，至于日志是log4打印的（或者是logback打印的）
         * 都是由slf4j进行操作的，我们不关心。
+        *
+        *
+        * <!--导入log4j适配器依赖-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <!--导入log4j依赖-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <!--SLF4J核心配置-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.29</version>
+        </dependency>
+        *
         * */
         Logger logger = LoggerFactory.getLogger(SLF4J集成log4j的方法.class);
         // 打印输出信息

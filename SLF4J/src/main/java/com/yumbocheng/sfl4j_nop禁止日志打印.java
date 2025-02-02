@@ -8,16 +8,32 @@ import org.slf4j.LoggerFactory;
 public class sfl4j_nop禁止日志打印 {
 
     @Test
-    public void test01(){
+    public void test01() {
         /*
-        *  使用log4j-nop
-        *       表示不记录日志
-        *       在我们使用slf4j-nop的时候
-        *       首先还是需要向pom.xml文件中导入实现类依赖
-        *       这个实现依赖，根据simple与logback属于同一级别。
-        *       所以如果想让这个nop发挥效果，禁止所有日志的打印
-        *       那么就必须将这个slf4j-nop的依赖放在所有日志依赖的上方
-        * */
+         *  使用log4j-nop
+         *       表示不记录日志
+         *       在我们使用slf4j-nop的时候
+         *       首先还是需要向pom.xml文件中导入实现类依赖
+         *       这个实现依赖，根据simple与logback属于同一级别。
+         *       所以如果想让这个nop发挥效果，禁止所有日志的打印
+         *       那么就必须将这个slf4j-nop的依赖放在所有日志依赖的上方
+         * */
+
+        /**
+         *     <!--导入nop：这个实现了不记录日志-->
+         *     <dependency>
+         *       <groupId>org.slf4j</groupId>
+         *       <artifactId>slf4j-nop</artifactId>
+         *       <version>1.7.25</version>
+         *     </dependency>
+         *
+         *     <!--SLF4J核心配置-->
+         *     <dependency>
+         *       <groupId>org.slf4j</groupId>
+         *       <artifactId>slf4j-api</artifactId>
+         *       <version>1.7.29</version>
+         *     </dependency>
+         */
 
         Logger logger = LoggerFactory.getLogger(sfl4j_nop禁止日志打印.class);
 

@@ -49,7 +49,7 @@ public class 配置文件_输出到控制台 {
     }
 
     @Test
-    public void test02(){
+    public void test02() throws InterruptedException {
         /*
         * 日志输出详细信息的开关
         * */
@@ -58,12 +58,12 @@ public class 配置文件_输出到控制台 {
         LogLog.setInternalDebugging(true);
         Logger logger = Logger.getLogger(配置文件_输出到控制台.class);
         // 打印输出信息
-        logger.fatal("fatal信息");
-        logger.error("error信息");
-        logger.warn("warn信息");
-        logger.info("info信息");
-        logger.debug("debug信息");
-        logger.trace("trace信息");
+
+        for(int i=0;i<100;i++){
+            Thread.sleep(1000);
+            logger.info("info信息，"+i);
+        }
+
     }
 
     @Test

@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.slf4j.LoggerFactory.*;
 
 public class 入门案例 {
 
@@ -32,6 +31,21 @@ public class 入门案例 {
         logger.info("info信息");
         logger.warn("warn信息");
         logger.error("error信息");
+
+        /**
+         *     <!--SLF4J核心配置-->
+         *     <dependency>
+         *       <groupId>org.slf4j</groupId>
+         *       <artifactId>slf4j-api</artifactId>
+         *       <version>1.7.29</version>
+         *     </dependency>
+         *     <!--SLF4J自带的简单实现-->
+         *     <dependency>
+         *       <groupId>org.slf4j</groupId>
+         *       <artifactId>slf4j-simple</artifactId>
+         *       <version>1.7.29</version>
+         *     </dependency>
+         */
 
     }
 
