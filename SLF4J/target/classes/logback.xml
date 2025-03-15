@@ -17,7 +17,7 @@
     <!--在我们实际的开发中，可以将经常用到的信息使用 property标签声明，这样可以实现多次的调用-->
     <!--property标签 用于配置日志的输出格式，被这个标签声明的内容可以在多个地方进行引用-->
     <!--使用property标签 的叫做通用属性配置-->
-    <property name="pattern" value="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c %M %L %thread %m%n"></property>
+    <property name = "pattern" value="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c %M %L %thread %m%n"></property>
 
     <!--配置文件的输出路径(这里可以存储一个根路径，之后在不同的项目中进行修改，也可以存储一个要存储最终位置的路径)-->
     <!--此时我们这里存储的是根路径，之后在指定的文件中添加子类经-->
@@ -52,7 +52,7 @@
     <!--appender标签 用于配置日志输出的位置-->
     <!--name是自己起的名字，class是这个输出到控制台的类-->
     <!-- 配置控制台输出日志信息-->
-    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name = "consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <!--
             target标签：表示对控制台打印日志信息的配置
             默认：System.out 表示以黑色字体输出日志
@@ -144,18 +144,13 @@
     <root level="ALL">
         <!--引入appender，日志记录器，使用name属性来获取指定的appender对象-->
         <!--<appender-ref ref="consoleAppender"/>-->
-<!--        <appender-ref ref="asyncAppender"/>-->
+        <appender-ref ref="asyncAppender"/>
     </root>
 
     <!-- 以上使用的是root(根节点的logger)，我们此时使用自定义的logger-->
     <!-- 这里需要使用name属性来指定父类路径(这个路径必须是输出日志文件文件的父路径)-->
     <logger name="com.yunbocheng" level="info" additivity="false">
         <!-- 在自定义logger中配置appender -->
-        <!-- 这里定义使用哪一种appender，可以同时配置多个-->
-<!--        <appender-ref ref="asyncAppender"/>-->
-        <appender-ref ref="roll"/>
-<!--        <appender-ref ref="htmlFileAppender"/>-->
-<!--        <appender-ref ref="fileAppender"/>-->
-<!--        <appender-ref ref="consoleAppender"/>-->
+        <appender-ref ref="consoleAppender"/>
     </logger>
 </configuration>
